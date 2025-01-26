@@ -126,7 +126,7 @@ const Login = () => {
       console.log("Response data:", response.data);
     
       // Extract JWT token from the response
-      const token = response.data.token;
+      const token = response.data.data;
       
       // Ensure token is valid and a string
       if (!token || typeof token !== "string") {

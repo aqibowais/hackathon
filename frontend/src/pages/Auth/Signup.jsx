@@ -91,7 +91,6 @@ const Signup = () => {
             <Field as="select" name="role" className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-2 focus:ring-[#9AC747] focus:outline-none">
               <option value="Admin">Admin</option>
               <option value="Receptionist">Receptionist</option>
-              <option value="Staff">Staff</option>
             </Field>
             <ErrorMessage name="role" component="div" className="text-red-600 text-xs" />
           </div>
