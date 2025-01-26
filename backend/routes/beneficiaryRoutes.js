@@ -8,3 +8,4 @@ BeneficiaryRoutes.get('/:cnic', getBeneficiaryByCNIC);
 BeneficiaryRoutes.post('/register', registerBeneficiary);
 
 export default BeneficiaryRoutes;
+

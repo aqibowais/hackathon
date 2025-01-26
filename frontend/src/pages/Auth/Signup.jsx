@@ -27,17 +27,23 @@ const Signup = () => {
   const handleSubmit = async (values) => {
     try {
       const response = await axios.post(`${backendPortURL}/management/register`, values);
-      // Show success toast
-      toast.success(`Success: ${response.data.message}`, {
-      });
-      navigate("/dashboard");
+      toast.success(`Success: ${response.data.message}`, {});
+      
+      const role = values.role; // Get the role from the form data
+      if (role === "Admin") {
+        navigate("/admin"); // Navigate to Admin Dashboard
+      } else if (role === "Receptionist") {
+        navigate("/receptionist"); // Navigate to Receptionist Dashboard
+      } else {
+        navigate("/"); // Navigate to default dashboard
+      }
+  
     } catch (error) {
-      // Show error toast
-      toast.error(`Error: ${error.response?.data?.message || "Something went wrong"}`, {
-      });
+      toast.error(`Error: ${error.response?.data?.message || "Something went wrong"}`, {});
       console.error("Error details:", error);
     }
   };
+  
 
   return (
     <>

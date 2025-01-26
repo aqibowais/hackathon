@@ -1,1 +1,1 @@
-export const backendPortURL = "https://hackathon-iota-six.vercel.app/"
+export const backendPortURL = "https://hackathon-iota-six.vercel.app"

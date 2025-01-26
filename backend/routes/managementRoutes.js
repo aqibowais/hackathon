@@ -11,9 +11,10 @@ const managementRoutes = express.Router();
 
 managementRoutes.post('/register', register)
 managementRoutes.post('/login', login)
-managementRoutes.get('/get-all-management',protect, getManagement)
-managementRoutes.delete('/delete-all-management',protect, deleteAllUser)
-managementRoutes.delete('/delete-management/:id',protect, deleteManagement)
+managementRoutes.get('/get-all-management', getManagement)
+managementRoutes.delete('/delete-all-management', deleteAllUser)
+managementRoutes.delete('/delete-management/:id', deleteManagement)
+
 
 
 

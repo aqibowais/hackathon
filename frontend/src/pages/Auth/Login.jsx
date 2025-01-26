@@ -23,15 +23,24 @@ const Login = () => {
   const handleSubmit = async (values) => {
     try {
       const response = await axios.post(`${backendPortURL}/management/login`, values);
-      toast.success(`Success: ${response.data.message}`, {
-            });
-      navigate("/dashboard"); // Redirect after login
+      toast.success(`Success: ${response.data.message}`, {});
+  
+      const role = response.role; 
+      console.log(`Role: ${role}`);
+      if (role === "Admin") {
+        navigate("/admin"); 
+      } else if (role === "Receptionist") {
+        navigate("/receptionist"); 
+      } else {
+        navigate("/"); 
+      }
+  
     } catch (error) {
-      toast.error(`Error: ${error.response?.data?.message || "Something went wrong"}`, {
-            });
+      toast.error(`Error: ${error.response?.data?.message || "Something went wrong"}`, {});
       console.error("Error details:", error);
     }
   };
+  
 
   return (
     <Formik
